@@ -17,4 +17,12 @@ feature "Task Manager" do
     expect(page).to have_content "Add a Task: "
   end
 
+  scenario "User can add a task and see it on the homepage" do
+    visit '/'
+    click_on "Add a Task"
+    fill_in "create_task", with: "new_task"
+    click_on "Create Task"
+    expect(page).to have_content "new_task"
+  end
+
 end
