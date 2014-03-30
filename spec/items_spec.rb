@@ -11,4 +11,10 @@ feature "Task Manager" do
     expect(page).to have_content "Welcome"
   end
 
+  scenario "User can click on the add task link and go to add task page" do
+    visit '/'
+    click_on "Add a Task"
+    expect(page).to have_content "Add a Task: "
+  end
+
 end
